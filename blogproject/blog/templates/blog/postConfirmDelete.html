@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Confirmar Deleção</title>
+    </head>
+    <body>
+        <h1>Tem certeza que quer deletar o post "{{ post.titulo }}"</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Sim, deletar.</button>
+        </form>
+        <a href="{% url 'postList' %}">Cancelar</a>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog do Ruivo</title>
+    </head>
+    <body>
+        <h1>Blog Anti-Obama</h1>
+        <a href="{% url 'postCreate' %}">Criar novo post!</a>
+        <ul>
+            {% for post in posts %}
+            <li><a href="{% url 'postDetail' post.pk %}">{{ post.titulo }}</a>
+                <small>Criado em: {{ post.createdAt }}</small>
+                <a href="{% url 'postUpdate' post.pk %}">Editar</a>
+                <a href="{% url 'postDelete' post.pk %}">Deletar</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
